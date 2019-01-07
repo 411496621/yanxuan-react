@@ -1,27 +1,31 @@
 import React, {Component} from 'react'
 import "./index.styl"
+import PropTypes from "prop-types"
+import filterPeople from "../../../../untils/filterPeople"
 
 class Style1 extends Component {
+  static propTypes = {
+    Item:PropTypes.object.isRequired
+  }
   render() {
+    const {Item} = this.props
     return (
       <div className="style1">
         <div>
           <div className="u-name">
         <span className="ava">
-          <img v-lazy="topicItem.avatar" alt="" />
+          <img src={Item.avatar}  alt="" />
         </span>
-            <span>选妹</span>
+            <span>{Item.nickname}</span>
           </div>
           <div className="title">
-
-            网易CEO丁磊的年度好货推荐，全场超低三石福利价！低至50%Off
-
+            {Item.title}
           </div>
           <div className="u-pic">
-            <img v-lazy="topicItem.picUrl" alt="" />
+            <img src={Item.picUrl} alt="" />
           </div>
           <div className="u-rcount">
-            <span>xxxx人看过</span>
+            <span>{filterPeople(Item.readCount)}人看过</span>
           </div>
         </div>
       </div>

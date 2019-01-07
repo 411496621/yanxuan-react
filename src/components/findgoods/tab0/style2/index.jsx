@@ -1,27 +1,33 @@
 import React, {Component} from 'react'
 import "./index.styl"
+import PropTypes from "prop-types"
+import filterPeople from "../../../../untils/filterPeople"
 class Style2 extends Component {
+  static propTypes = {
+    Item:PropTypes.object.isRequired
+  }
   render() {
+    const {Item} = this.props
     return (
       <div className="style2">
         <div>
           <div className="info">
             <div className="u-name">
           <span className="ava">
-            <img src='https://yanxuan.nosdn.127.net/628e134d9f1f243f69fc8ae7c71dfa17.jpg' alt="" />
+            <img src={Item.avatar} alt="" />
           </span>
-              <span>xxxx</span>
+              <span>{Item.nickname}</span>
             </div>
             <div className="title">
-              xxxxx
+              {Item.title}
             </div>
-            <div className="desc">xxxx</div>
+            <div className="desc">{Item.subTitle}</div>
             <div className="u-rcount">
-              <span>xxxx人看过</span>
+              <span>{filterPeople(Item.readCount)}人看过</span>
             </div>
           </div>
           <div className="u-pic">
-            <img src='https://yanxuan.nosdn.127.net/915856b7c721e38bc03c48ac8512a8d3.jpg' alt="" />
+            <img src={Item.picUrl} alt="" />
           </div>
         </div>
       </div>

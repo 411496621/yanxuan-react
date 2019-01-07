@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import Footer from "../footer"
 import {Switch,Route,Redirect} from "react-router-dom"
-import Tab0 from "./tab0"
+import Tab0 from "../../containers/tab0"
 import Tab1 from "./tab1"
 import Tab2 from "./tab2"
 import Tab3 from "./tab3"

@@ -10,6 +10,7 @@ import "./common/css/reset.css"
 import "./mock"
 /*引入swiper的css*/
 import 'swiper/dist/css/swiper.min.css'
+import filterPeople from "./untils/filterPeople"
 
 ReactDom.render(
   <Provider store={store}><App/></Provider>,
