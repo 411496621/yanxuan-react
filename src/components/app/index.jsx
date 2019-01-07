@@ -6,7 +6,7 @@ import Category from '../../containers/category'
 import FindGoods from "../findgoods"
 import Profile from "../profile"
 import ShopCart from "../shopcart"
-import Search from "../search"
+import Search from "../../containers/search"
 
 /*引入app内的样式*/
 import './index.styl'

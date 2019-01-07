@@ -1,2 +1,6 @@
 export const RECEIVE_CATELIST = 'receive_catelist'
 export const RECEIVE_CATEGORYLIST = 'receive_categorylist'
+export const RECIVE_SEARCHNAMELIST = 'recive_searchnamelist'
+export const CLEAN_SEARCHLIST = 'clean_searchlist'
+export const RECEIVE_DEFAULT_TOPICLIST = 'receive_default_topiclist'
+export const RECEIVE_NEW_TOPICLIST = 'receive_new_topiclist'
