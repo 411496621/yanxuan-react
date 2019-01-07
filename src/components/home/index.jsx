@@ -1,13 +1,13 @@
 import React, {Component} from 'react'
-import Footer from "../footer"
-class App extends Component {
+
+class Home extends Component {
   render() {
     return (
       <div>
-        <Footer />
+        Home
       </div>
     )
   }
 }
 
-export default App
+export default Home

@@ -1,13 +1,13 @@
 import React, {Component} from 'react'
-import Footer from "../footer"
-class App extends Component {
+
+class ShopCart extends Component {
   render() {
     return (
       <div>
-        <Footer />
+        shopcart
       </div>
     )
   }
 }
 
-export default App
+export default ShopCart
