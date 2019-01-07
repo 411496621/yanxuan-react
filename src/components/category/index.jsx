@@ -1,10 +1,11 @@
 import React, {Component} from 'react'
-
+import Footer from "../footer"
 class Category extends Component {
   render() {
     return (
-      <div>
+      <div className='atguigu'>
         Category
+        <Footer />
       </div>
     )
   }

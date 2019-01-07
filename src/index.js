@@ -3,4 +3,4 @@ import ReactDom from "react-dom"
 import App from "./components/app"
 import "./common/css/reset.css"
 
-ReactDom.render(<App/>,document.getElementById('root'))
+ReactDom.render(<App/>,document.getElementById('app'))

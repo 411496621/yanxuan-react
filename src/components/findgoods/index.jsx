@@ -1,10 +1,11 @@
 import React, {Component} from 'react'
-
+import Footer from "../footer"
 class FindGoods extends Component {
   render() {
     return (
-      <div>
+      <div className='atguigu'>
         findgoods
+        <Footer />
       </div>
     )
   }
