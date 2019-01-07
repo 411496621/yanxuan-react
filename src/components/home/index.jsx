@@ -2,8 +2,14 @@ import React, {Component} from 'react'
 import Footer from "../footer"
 import Split from "../split"
 import "./index.styl"
+import PropTypes from "prop-types"
 import BScroll from "better-scroll"
+import Swiper from "swiper"
 class Home extends Component {
+  static propTypes = {
+    catelist:PropTypes.array.isRequired,
+    getCateList:PropTypes.func.isRequired
+  }
   state = {
     activeIndex:0,
     navArr:['居家','鞋包配饰','服装','电器','洗护','饮食','餐厨','婴童','文体','特色区']
@@ -14,14 +20,33 @@ class Home extends Component {
     })
   }
   componentDidMount() { // 进行redux相关的操作 请求数据
+    this.props.getCateList()
+  }
+  componentDidUpdate() {
+    if(!this.bs){
+      this.bs = new BScroll('.wrapper',{
+        scrollX:true
+      })
+    }else {
+      this.bs.refresh()
+    }
 
-
+    if(!this.mySwiper){
+      new Swiper('.swiper-container', {
+        //autoplay: true,//可选选项，自动滑动
+        loop:true,
+        pagination: {
+          el: '.swiper-pagination',
+        }
+      })
+    }
   }
 
   render() {
-    let {activeIndex} = this.state
+    const {activeIndex} = this.state
+    const {catelist} = this.props
     return (
-      <div className='atguigu'>
+      <div className='atguigu home'>
         <div className="header">
           <div className="header-top">
             <div className="left">网易严选</div>
@@ -88,10 +113,16 @@ class Home extends Component {
 
           <div className="catelist-wrapper">
             <div className="cateList">
-              <a href="javascript:;" v-for="(Item,index) in cateList" key="index" >
-                <img v-lazy="Item.subCateList[0].wapBannerUrl" alt="" />
-                  <span>{/*{{Item.name}}*/}</span>
-              </a>
+              {
+                catelist.map((Item,index)=>{
+                  return (
+                    <a href="javascript:;"  key={index} >
+                      <img src={Item.subCateList[0].wapBannerUrl} alt="" />
+                      <span>{Item.name}</span>
+                    </a>
+                  )
+                })
+              }
             </div>
           </div>
           <Split/>

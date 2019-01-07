@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
 import {Switch,BrowserRouter,Route,Redirect} from "react-router-dom"
 /*引入路由组件*/
-import Home from "../home"
-import Category from '../category'
+import Home from "../../containers/home"
+import Category from '../../containers/category'
 import FindGoods from "../findgoods"
 import Profile from "../profile"
 import ShopCart from "../shopcart"

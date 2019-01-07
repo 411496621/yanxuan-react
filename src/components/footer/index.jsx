@@ -13,7 +13,6 @@ class Footer extends Component {
     ]
   }
   gotoPath = (pathString)=>{
-    console.log("xxxx")
     this.props.history.push(pathString)
   }
   hasActiveClass=Item=>{
