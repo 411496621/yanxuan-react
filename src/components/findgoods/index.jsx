@@ -26,13 +26,13 @@ class FindGoods extends Component {
     return (
       <div className="find-goods">
         <div  className='find-goods-header' >
-          <div className='left'>
+          <div className='left' onClick={(()=>(this.props.history.push('/home'))).bind(this)}>
             <i className="iconfont icon-shouye"></i>
           </div>
           <div className='middle'>
             网易严选
           </div>
-          <div className="right">
+          <div className="right" onClick={(()=>(this.props.history.push('/shopcart'))).bind(this)}>
             <i className="iconfont icon-gouwuche"></i>
           </div>
         </div>
@@ -47,14 +47,14 @@ class FindGoods extends Component {
             }
           </ul>
         </nav>
-          <Switch>
-            <Route path='/findgoods/tab0' component={Tab0} />
-            <Route path='/findgoods/tab1' component={Tab1} />
-            <Route path='/findgoods/tab2' component={Tab2} />
-            <Route path='/findgoods/tab3' component={Tab3} />
-            <Route path='/findgoods/tab4' component={Tab4} />
-            <Redirect  to='/findgoods/tab0' />
-          </Switch>
+        <Switch>
+          <Route path='/findgoods/tab0' component={Tab0} />
+          <Route path='/findgoods/tab1' component={Tab1} />
+          <Route path='/findgoods/tab2' component={Tab2} />
+          <Route path='/findgoods/tab3' component={Tab3} />
+          <Route path='/findgoods/tab4' component={Tab4} />
+          <Redirect  to='/findgoods/tab0' />
+        </Switch>
         <Footer />
       </div>
     )

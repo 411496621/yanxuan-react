@@ -37,6 +37,9 @@ class Home extends Component {
         loop:true,
         pagination: {
           el: '.swiper-pagination',
+        },
+        autoplay:{
+          disableOnInteraction: false
         }
       })
     }

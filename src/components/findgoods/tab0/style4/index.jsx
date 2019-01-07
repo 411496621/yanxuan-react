@@ -5,7 +5,7 @@ import PropTypes from "prop-types"
 
 class Style4 extends Component {
   static propTypes = {
-    Item:PropTypes.func.isRequired
+    Item:PropTypes.object.isRequired
   }
 
   componentDidMount() {
@@ -14,7 +14,7 @@ class Style4 extends Component {
       autoplay:{
         delay: 3000,
         stopOnLastSlide: false,
-        disableOnInteraction: true,
+        disableOnInteraction: false,
       },
       effect : 'coverflow',
       slidesPerView: 3,

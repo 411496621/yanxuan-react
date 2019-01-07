@@ -12,7 +12,8 @@ class Tab0 extends Component {
     getNewList: PropTypes.func.isRequired
   }
   state = {
-    page:0
+    page:0,
+    time:0
   }
   componentDidMount() {
     this.props.getDefaultList()
@@ -27,8 +28,12 @@ class Tab0 extends Component {
         }
       })
       this.bs.on('pullingUp', ()=> {
-        /*函数节流 满足条件的话 发请求*/
-
+        /*函数节流 满足条件的话 发请求 上拉加载*/
+        if(Date.now()-this.state.time>1000){
+          this.state.time = Date.now()
+          this.state.page++
+          this.props.getNewList(this.state.page)
+        }
         this.bs.finishPullUp()
       })
     }else{
