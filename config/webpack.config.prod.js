@@ -403,6 +403,14 @@ module.exports = {
               'sass-loader'
             ),
           },
+          {
+            test: /\.styl$/,
+            use: [
+              require.resolve('style-loader'),
+              require.resolve('css-loader'),
+              require.resolve('stylus-loader')
+            ]
+          },
           // "file" loader makes sure assets end up in the `build` folder.
           // When you `import` an asset, you get its filename.
           // This loader doesn't use a "test" so it will catch all modules
@@ -413,7 +421,7 @@ module.exports = {
             // it's runtime that would otherwise be processed through "file" loader.
             // Also exclude `html` and `json` extensions so they get processed
             // by webpacks internal loaders.
-            exclude: [/\.(js|mjs|jsx|ts|tsx)$/, /\.html$/, /\.json$/],
+            exclude: [/\.(js|mjs|jsx|ts|tsx)$/, /\.html$/, /\.json$/,/\.styl$/],
             options: {
               name: 'static/media/[name].[hash:8].[ext]',
             },
