@@ -40,6 +40,8 @@ class Category extends Component {
     }
   }
 
+
+
   render() {
     const {categorylist} = this.props
     const {menuIndex} = this.state
